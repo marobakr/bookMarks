@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMarks</title>
+    <!-- Meta  -->
+    <meta
+      name="description"
+      content="Explore the ultimate online bookmarking experience. Effortlessly organize and access your favorite websites with our intuitive platform. Join us to redefine the way you navigate the web."
+    />
+    <meta
+      name="keywords"
+      content="Bookmarking Platform
+ Browser Organization
+ devfolio Route front-end designe html css javascript Digital Bookmark Manager
+"
+    />
+    <meta name="author" content="Marwan Abubakr" />
+    <meta name="robots" content="index, follow" />
+    <!-------- faveIcon -------->
+    <link rel="icon" href="./images/favicon.ico" />
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- BootStrap  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Css Style  -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="light-mode">
+    <header class="pt-5">
+      <div class="container">
+        <div class="inner ">
+          <div class="row align-items-center">
+            <div class=" col-2 col-sm-2">
+              <div class="logo ">
+                <a href="#hero">
+                  <div class="img light-mode"></div>
+                </a>
+              </div>
+            </div>
+            <div class=" col-7 col-sm-7">
+              <h1 class="light-mode px-2 position-relative text-center m-auto">
+                Bookmarker
+              </h1>
+            </div>
+            <div class="col-3 col-sm-3">
+              <nav
+                class="d-flex justify-content-end align-items-center gap-1"
+              >
+                <div class="search-box">
+                  <input
+                    oninput="search()"
+                    class="form-control light-mode"
+                    type="search"
+                    id="search"
+                    placeholder="Search ..."
+                  />
+                </div>
+
+                <div class="toggle-mode fs-3">
+                  <i id="dark-theme" class="dark-theme fa-solid fa-moon"></i>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="app d-flex justify-content-center align-items-center py-5 text-center"
+    >
+      <div class="container">
+        <div class="line pb-4">
+          <div></div>
+        </div>
+        <h2
+          class="heading light-mode d-flex justify-content-center align-items-center gap-2 pb-5"
+        >
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div class="text-start pb-4">
+          <div
+            class="title light-mode d-flex justify-content-start align-items-center"
+          >
+            <i class="fa-solid fa-book-bookmark pe-2"></i>
+            <label class="ps-1" for="name"> Site Name </label>
+          </div>
+          <input
+            id="name"
+            class="form-control light-mode mb-3"
+            type="text"
+            placeholder="Bookmark Name"
+            onblur="validationName()"
+          />
+          <p id="validation-name" class="light-mode alert alert-danger d-none">
+            invalid pattern
+          </p>
+          <div
+            class="title light-mode d-flex justify-content-start align-items-center"
+          >
+            <i class="fa-solid fa-link pe-2"></i>
+            <label class="ps-1" for="site">Site URL </label>
+          </div>
+          <input
+            class="form-control light-mode mb-4"
+            id="site"
+            type="text"
+            placeholder="Website URL"
+            onblur="validationLink()"
+          />
+          <p id="validation-url" class="light-mode alert alert-danger d-none">
+            invalid pattern
+          </p>
+          <button id="addbtn" class="light-mode btn submit d-block m-auto px-5">
+            Submit
+          </button>
+        </div>
+        <div class="line pb-4">
+          <div></div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="bodytable"></tbody>
+        </table>
+        <div id="empty" class="light-mode emptyitem h3">no site to show</div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
