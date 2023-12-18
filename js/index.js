@@ -44,6 +44,8 @@ submite.addEventListener('click', function () {
     messageEmpty.style.display = 'none';
     console.log(deleteItem);
   }
+  // Clear Input Value
+  clearForm();
 });
 
 // Function display Item
@@ -74,7 +76,11 @@ function display() {
   }
   bodyTable.innerHTML = cartona;
 }
-
+// Clear Data
+function clearForm() {
+  labelName.value = '';
+  labelSite.value = '';
+}
 // Deleted Item
 function deltedItem(index) {
   listSite.splice(index, 1);
@@ -126,10 +132,8 @@ function search() {
   }
   if (isEmpty.length <= 0) {
     messageEmpty.style.display = 'block';
-    // btnClearAll.classList.add('d-none');
   } else {
     messageEmpty.style.display = 'none';
-    // btnClearAll.classList.remove('d-none');
   }
   // Add Item To Show
   bodyTable.innerHTML = cartona;

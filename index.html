@@ -42,24 +42,22 @@
   <body class="light-mode">
     <header class="pt-5">
       <div class="container">
-        <div class="inner ">
+        <div class="inner">
           <div class="row align-items-center">
-            <div class=" col-2 col-sm-2">
-              <div class="logo ">
+            <div class="col-2 col-sm-2">
+              <div class="logo">
                 <a href="#hero">
                   <div class="img light-mode"></div>
                 </a>
               </div>
             </div>
-            <div class=" col-7 col-sm-7">
+            <div class="col-7 col-sm-7">
               <h1 class="light-mode px-2 position-relative text-center m-auto">
                 Bookmarker
               </h1>
             </div>
             <div class="col-3 col-sm-3">
-              <nav
-                class="d-flex justify-content-end align-items-center gap-1"
-              >
+              <nav class="d-flex justify-content-end align-items-center gap-1">
                 <div class="search-box">
                   <input
                     oninput="search()"
@@ -105,7 +103,7 @@
             class="form-control light-mode mb-3"
             type="text"
             placeholder="Bookmark Name"
-            onblur="validationName()"
+            oninput="validationName()"
           />
           <p id="validation-name" class="light-mode alert alert-danger d-none">
             invalid pattern
@@ -121,7 +119,7 @@
             id="site"
             type="text"
             placeholder="Website URL"
-            onblur="validationLink()"
+            oninput="validationLink()"
           />
           <p id="validation-url" class="light-mode alert alert-danger d-none">
             invalid pattern
