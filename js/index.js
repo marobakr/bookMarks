@@ -110,7 +110,7 @@ function search() {
                 <td>${i + 1}</td>
                 <td>${listSite[i].name}</td>
                 <td>
-                  <button onclick="goToSite()" id="visit" 
+                  <button onclick="goToSite(${i})" id="visit" 
                   class="btn visit light-mode">
                   <span>Visit</span>
                   <i class="fa-solid fa-eye"></i>
