@@ -36,7 +36,6 @@ submite.addEventListener('click', function () {
       site: valueSite,
     };
     listSite.push(Item);
-
     // Add To Local Storge
     localStorage.setItem('sites', JSON.stringify(listSite));
     // Call Display
@@ -45,7 +44,7 @@ submite.addEventListener('click', function () {
     console.log(deleteItem);
   }
   // Clear Input Value
-  clearForm();
+  // clearForm();
 });
 
 // Function display Item
@@ -58,7 +57,7 @@ function display() {
               <td>${listSite[i].name}</td>
               <td>
 
-                <button onclick="goToSite()" id="visit" 
+                <button onclick="goToSite(${i})" id="visit" 
                 class="btn visit light-mode">
                 <span>Visit</span>
                 <i class="fa-solid fa-eye"></i>
@@ -91,11 +90,11 @@ function deltedItem(index) {
   }
 }
 // Go To Site
-function goToSite() {
+function goToSite(index) {
   var url = '';
-  if (labelSite.value.includes('http')) {
-    url = `${labelSite.value}`;
-  } else url = `https://${labelSite.value}`;
+  if (listSite[index].site.includes('http')) {
+    url = `${listSite[index].site}`;
+  } else url = `https://${listSite[index].site}`;
   window.open(url, '_blank');
 }
 
@@ -180,15 +179,6 @@ darkThem.addEventListener('click', function (e) {
     } else allElemnts[i].classList.replace('dark-mode', 'light-mode');
   }
   for (i = 0; i < deletebtn.length; i++) {
-    if (
-      deletebtn[i].classList.contains('light-mode') &&
-      visit[i].classList.contains('light-mode')
-    ) {
-      deletebtn[i].classList.replace('light-mode', 'dark-mode');
-      visit[i].classList.replace('light-mode', 'dark-mode');
-    } else {
-      deletebtn[i].classList.replace('dark-mode', 'light-mode');
-      visit[i].classList.replace('dark-mode', 'light-mode');
-    }
+    
   }
 });
