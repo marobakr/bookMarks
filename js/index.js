@@ -26,7 +26,7 @@ if (listSite.length <= 0) {
 
 // Function Add Item
 submite.addEventListener('click', function () {
-  if (true) {
+  if (validationName() && validationLink()) {
     var valueName = labelName.value;
     var valueSite = labelSite.value;
 
@@ -42,7 +42,7 @@ submite.addEventListener('click', function () {
     messageEmpty.style.display = 'none';
   }
   // Clear Input Value
-  // clearForm();
+  clearForm();
 });
 
 // Function display Item
@@ -168,21 +168,18 @@ function validationLink() {
 }
 // Start Dark Theme
 darkThem.addEventListener('click', function (e) {
-  if (e.target.classList.contains('fa-moon')) {
-    e.target.classList.replace('fa-moon', 'fa-sun');
-  } else e.target.classList.replace('fa-sun', 'fa-moon');
+  if (darkThem.classList.contains('fa-moon')) {
+    localStorage.setItem('theme', 'fa-sun');
+    console.log(localStorage.getItem('theme'));
+
+    darkThem.classList.replace('fa-moon', `${localStorage.getItem('theme')}`);
+  } else {
+    localStorage.setItem('theme', 'fa-moon');
+    darkThem.classList.replace('fa-sun', `${localStorage.getItem('theme')}`);
+  }
   for (var i = 0; i < allElemnts.length; i++) {
     if (allElemnts[i].classList.contains('light-mode')) {
       allElemnts[i].classList.replace('light-mode', 'dark-mode');
     } else allElemnts[i].classList.replace('dark-mode', 'light-mode');
   }
 });
-
-var x = 'light-mode';
-for (i = 0; i < visit.length; i++) {
-  if (visit[i].classList.contains('light-mode')) {
-    x = 'dark-mode';
-  } else {
-    x = 'light-mode';
-  }
-}
