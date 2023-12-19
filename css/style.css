@@ -10,9 +10,6 @@
   html {
     font-size: 10px;
   }
-  nav .search-box input{
-   /* display: none; */
-  }
 }
 
 a {
@@ -40,7 +37,6 @@ h2 {
   background-position: center;
   background-size: cover;
 }
-
 
 .logo .img.light-mode {
   background-image: url('/images/favicon.ico');
@@ -154,11 +150,11 @@ h1:hover::before {
   border: 0.0625rem solid #c13b15;
   color: #c13b15;
 }
-.delete.dark-mode {
-  background-color: #0f044c;
+:has(.fa-sun) #deletebtn {
+ background-color: #0f044c;
   color: white;
 }
-.delete.dark-mode:hover {
+:has(.fa-sun) #deletebtn:hover {
   border: 0.0625rem solid #0f044c;
   background-color: transparent;
   color: #0f044c;
@@ -172,11 +168,11 @@ h1:hover::before {
   border: 0.0625rem solid #3ca55c;
   color: #3ca55c;
 }
-.visit.dark-mode {
+:has(.fa-sun) #visit {
   background-color: #363062;
   color: white;
 }
-.visit.dark-mode:hover {
+:has(.fa-sun) #visit:hover {
   background-color: transparent;
   border: 0.0625rem solid #363062;
   color: #363062;

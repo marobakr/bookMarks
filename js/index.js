@@ -3,7 +3,6 @@ var labelSite = document.getElementById('site');
 var submite = document.getElementById('addbtn');
 var bodyTable = document.getElementById('bodytable');
 var messageEmpty = document.getElementById('empty');
-var deleteItem = document.getElementById('deletebtn');
 var validationMessage = document.getElementById('validation-name');
 var validationUrl = document.getElementById('validation-url');
 var searchInput = document.getElementById('search');
@@ -27,7 +26,7 @@ if (listSite.length <= 0) {
 
 // Function Add Item
 submite.addEventListener('click', function () {
-  if (validationName() && validationLink()) {
+  if (true) {
     var valueName = labelName.value;
     var valueSite = labelSite.value;
 
@@ -41,7 +40,6 @@ submite.addEventListener('click', function () {
     // Call Display
     display();
     messageEmpty.style.display = 'none';
-    console.log(deleteItem);
   }
   // Clear Input Value
   // clearForm();
@@ -178,7 +176,13 @@ darkThem.addEventListener('click', function (e) {
       allElemnts[i].classList.replace('light-mode', 'dark-mode');
     } else allElemnts[i].classList.replace('dark-mode', 'light-mode');
   }
-  for (i = 0; i < deletebtn.length; i++) {
-    
-  }
 });
+
+var x = 'light-mode';
+for (i = 0; i < visit.length; i++) {
+  if (visit[i].classList.contains('light-mode')) {
+    x = 'dark-mode';
+  } else {
+    x = 'light-mode';
+  }
+}
